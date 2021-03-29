@@ -1,1 +1,146 @@
 
+/**
+* Dùng vòng lặp for kiểm tra số nguyên tố.
+* @param {number} x Số cần kiểm tra
+* @return {boolean} Trả về true nếu là số nguyên tố, ngược lại là false.
+*/
+function isPrimeNumber(x) {
+  if (x < 2) {
+    return false;
+  }
+  if (x === 2){
+      return true;
+  }
+  for (var i = 2; i <= x; i++) {
+    if (x % i === 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+}
+/**
+ * Sử dụng vòng lặp for...in để lấy về tất cả các key của object sau, 
+ * in ra cả các key của các nested object (object con lồng bên trong object lớn)
+ * Gợi ý: đây là bài tập khó, bạn nên tìm hiểu về recursive trước
+ */
+var apartment = {
+  bedroom: {
+    area: 20,
+    bed: {
+      type: 'twin-bed',
+      price: 100
+    }
+  }
+};
+var keys = [];
+
+function getObjectKey(obj) {
+  // Write code here...
+  for (var x in obj) {
+     
+    if (typeof obj[x] == 'object')
+    {
+        keys.push(x);
+      getObjectKey(obj[x]); 
+    }
+    else keys.push(x);
+  }
+  return keys;
+}
+/**
+ * viết hàm has để kiểm tra xem object có tồn tại 1 key xác định hay không
+ * Tham số:
+ *  - object: object cần kiểm tra
+ *  - key: key cần kiểm tra xem có tồn tại trong object không
+ * Return:
+ *  - true nếu có tồn tại
+ *  - false nếu không tồn tại
+ */
+function has(object, key) {
+  for (var keyObject in object)
+    if (key == keyObject)
+      return true;
+  return false;
+}
+/**
+* Dùng vòng lặp for kiểm tra số nguyên tố.
+* @param {number} x Số cần kiểm tra
+* @return {boolean} Trả về true nếu là số nguyên tố, ngược lại là false.
+*/
+
+function isPrimeNumber(x) {
+  // viết code ở đây.
+  if (x < 2) {
+    return false;
+  }
+  if (x === 2){
+      return true;
+  }
+  for (var i = 2; i <= x; i++) {
+    if (x % i === 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+}
+
+/**
+ * Dùng vòng lặp for để hiển thị ra màn hình bảng chữ cái abc.
+ * Gợi ý: Dùng String.fromCharCode
+ * Ví dụ: String.fromCharCode(97)) sẽ trả về ký tự"a" 
+ * Tham khảo: http://www.asciitable.com/ để hiểu thêm về mã ascii
+ */
+function fromCharCode() {
+  // viết code ở đây.
+  var output = "";
+  for (var i = 97; i < 123; i = i + 1) {
+    output += String.fromCharCode(i);
+  }
+  return output;
+}
+fromCharCode();
+// tính tổng của tích của các phần tử của array a với các phần tử của array b.
+/**
+ * var a = [1, 2, 3];
+ * var b = [10, 20];
+ * Kết quả mong muốn: 180 // (10 + 20 + 30) + (20 + 40 + 60)
+ */
+var a = [2, 11, 6];
+var b = [12, 25];
+
+function sumMultiplyArray(a, b) {
+  var sum = 0;
+  for (var i = 0; i < a.length; i++) {
+    for (var j = 0; j < b.length; j++) {
+      sum += a[i] * b[j];
+    }
+  }
+  return sum;
+}
+sumMultiplyArray(a, b);
+/**
+ * Viết hàm calculate trả về tích các số từ start đến end, không tính end 
+ * Ví dụ: calculate(2, 5) trả về kết quả 24 (vì 2 * 3 * 4 = 24)
+ */
+function calculate(start, end) {
+  var mul =1 ;
+  for(var i = start; i < end ; i++)
+  {
+    mul*= i;
+  }
+  return mul;
+}
+calculate(3,7);
+
+/*
+	Viết 1 chương trình xóa đi n phần tử cuối cùng của 1 array
+*/
+function removeEnd(arr, n) {
+  // your code here!
+  for (var i =0; i<n;i++){
+      arr.pop()
+  }
+  return arr;
+}
