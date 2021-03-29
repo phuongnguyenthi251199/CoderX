@@ -144,3 +144,13 @@ function removeEnd(arr, n) {
   }
   return arr;
 }
+
+/** 
+ * Viết function trả về n phần tử đầu tiên có trong mảng.
+*/
+
+function first(arr, n) {
+  // your code here...
+  return arr.slice(0, n);
+  
+}
