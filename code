@@ -245,8 +245,8 @@ var users = [
 ]
 
 function namesOnly(arr) {
-  // Write code here...
-  return arr.map(x=> x.name);
+  return arr.map(function(obj){
+     return obj.name;
   
 }
 // Use array map make an array of the names in <h1></h1>, and the ages in <h2></h2>
