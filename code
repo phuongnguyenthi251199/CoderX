@@ -277,3 +277,16 @@ function readyToPutInTheDOM(arr) {
       return '<h1>' + obj.name + '</h1>' + '<h2>' + obj.age + '</h2>';
   });
 }
+/**
+ * Tinh tong gia tri don hang trong gio hang
+ */
+var giohang = [
+  {name : 'A', soluong :2 , gia :100},
+  {name : 'B', soluong :3 , gia :200},
+  {name : 'C', soluong :4 , gia :400},
+  {name : 'D', soluong :5 , gia :300},
+];
+let sum = giohang.reduce(function(tong,obj){
+  return tong + obj.soluong*obj.gia;
+},0);// so 0 cuoi cung la gia tri khoi tao
+sum;
